@@ -1,8 +1,9 @@
-import { ChamadaDAO } from '../services/ChamadasService'
+
+import { Chamada } from '../../utils/connect'
 import styles from './ListaChamadaAdmin.module.css'
 
 interface ListaChamadaAdminProps {
-  listaChamada: Array<ChamadaDAO>
+  listaChamada: Array<Chamada>
 }
 
 export function ListaChamadaAdmin({ listaChamada }: ListaChamadaAdminProps) {
