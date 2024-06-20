@@ -1,0 +1,100 @@
+.container_list{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+    background-color: var(--cor-principal);
+    height: 400px;
+    width: 100%;
+    border-top: 3px solid var(--cor-principal);
+    box-shadow: 10px 20px 30px var(--cor-sombra);
+
+}
+
+.tabela{
+    width: 100%;
+    overflow-y: auto;
+}
+
+ .container_list .list_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-secundaria);
+    height: 10%;
+    width: 100%;
+    border-bottom: 3px solid var(--cor-principal);
+}
+
+ .container_list .list_title{
+    font-weight: bold;
+    color: var(--cor-letra-branco);
+    font-size: 3vh;
+    
+}
+  
+
+ .container_list .tabela table{
+    display: table;
+    border-collapse: collapse;
+    text-align: center;
+    width:100%;
+    vertical-align: inherit;
+    transition: 0.5s;
+}
+
+
+ .container_list .tabela table thead{
+    display: table-header-group;
+    background-color: var(--cor-principal);
+    text-align: center;
+    height: 2vh;
+    width: 100%;
+    font-weight: lighter;
+    font-size: 2vh;
+    color: var(--cor-letra-branco); 
+    border-bottom: 1px solid var(--cor-letra-branco);
+}
+
+ .container_list .tabela table thead th:not(:last-child) {
+    border-right: 1px solid var(--cor-letra-branco);
+}
+
+ .container_list .tabela table td{
+    display: table-cell;
+    padding: 10px;
+    text-align: center;
+    font-size: 2vh;
+    color: var(--cor-letra-branco);
+    animation: show_new 1s ease-in-out
+}
+
+
+ .container_list.col_nomes{
+    width: 36%;
+    text-align: start;
+}
+
+ .container_list .col_nomes_h{
+    width: 36%;
+    text-align: center;
+}
+
+ .container_list .body .col_tab{
+    width: 10%;
+}
+
+ .container_list .col_atd{
+    text-align: center;
+    width: 21%;
+}
+
+.hexagon {
+    width: 1.25vw;
+    height: 2.5vh;
+    position: relative;
+    left: 50%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }

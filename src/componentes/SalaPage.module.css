@@ -1,0 +1,55 @@
+.page{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page .container{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chamar{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.botaoChamar{
+  background-color: var(--cor-principal);
+  height: 150px;
+  width: 600px;
+  color: white;
+  font-size: 60px;
+  font-weight: 500;
+  border-radius: 20px;
+  border-bottom: 7px solid var(--cor-secundaria);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.botaoChamar .textoSala{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.botaoChamar:hover{
+  opacity: 95%;
+  cursor: pointer;
+}
+
+.atual{
+  margin-top: 20px;
+  font-size: 25px;
+}

@@ -1,0 +1,29 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+#root{
+  display: flex;
+  flex-direction: colunm;
+  height: 100%;
+}
+
+html, body{
+  height: 100%;
+}
+
+:root{
+    --cor-principal: #022554;
+    --cor-secundaria: #004AAD;
+    --cor-texto_roll: #022554;
+    --cor-preenchimento: #FFFFFF;
+    --cor-letra-branco: #FFFFFF;
+    --cor-letra-preto: #000000;
+    --cor-letra-vermelho: #D10107;
+    --cor-sombra: #494949;
+    --cor-ultima-chamada: #AD4E2B;
+}

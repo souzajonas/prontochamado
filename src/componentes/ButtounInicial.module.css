@@ -1,0 +1,23 @@
+.button{
+  background-color: var(--cor-principal);
+  height: 100px;
+  width: 500px;
+  color: white;
+  font-size: 40px;
+  font-weight: 500;
+  border-radius: 20px;
+  border-bottom: 7px solid var(--cor-secundaria);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button .textoSala{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.button:hover{
+  opacity: 95%;
+  cursor: pointer;
+}

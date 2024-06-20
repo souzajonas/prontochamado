@@ -1,0 +1,89 @@
+.container_call{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 100%;
+}
+
+ .container_call table{
+    display: table;
+    border-collapse: collapse;
+    /*border-spacing: 25vw 30px;*/
+    text-align: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+ .container_call table thead{
+    display: table-header-group;
+    background-color: var(--cor-secundaria);
+    text-align: center;
+    height: 35%;
+    font-size: 5.5vh;
+    color: var(--cor-letra-branco); 
+    
+}
+
+ .container_call table thead th{
+    box-shadow: 0px 15px 30px var(--cor-sombra);
+}
+
+
+ .container_call table thead th:last-child {
+    border-top-right-radius: 10vh;
+    border-bottom-right-radius: 10vh;
+}
+
+ .container_call table thead th:not(:last-child) {
+    border-right: 1px solid var(--cor-letra-branco);
+}
+
+ .container_call .col_hnome{
+    width: 50%;
+}
+
+ .container_call .col_hatendimento{
+    width: 35%;
+}
+
+ .container_call .col_hsala{
+    width: 15%;
+}
+
+@keyframes show_new{
+    0%{opacity: 0%;}
+    100%{opacity: 100%;}
+}
+
+ .container_call table tbody{
+    display: table-row-group;
+    text-align: center;
+    font-weight: 900;
+    font-size: 7vh;
+    color: var(--cor-letra-preto);
+    animation: show_new 1s ease-in-out
+}
+
+@keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+.col_nomes{
+  font-size: 70px;
+}
+
+  .blinking {
+    animation: blink 1s infinite; /* Ajuste a duração da animação conforme necessário */
+    animation: show_new 0.8s ease-in;
+  }

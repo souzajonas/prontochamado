@@ -1,0 +1,150 @@
+.container_left_window{
+    display: flex;
+    width: 95%;
+    height: 100%;
+}
+
+.container_left_window .container_frame_prof{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container_left_window .container_frame_prof .container_prof{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--cor-preenchimento);
+    width: 100%;
+    height: 90%;
+    border: 5px solid var(--cor-principal);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 4px 5px 1px var(--cor-sombra);
+    
+}
+
+.container_left_window .container_frame_prof .container_prof .container_title_prof{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-principal);
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.container_left_window .container_frame_prof .container_prof .container_title_prof span{
+    color: var(--cor-letra-branco);
+    text-align: center;
+    font-weight: bold; 
+    font-size: 4vh;
+    text-shadow: 0.5px 0.5px 1px var(--cor-sombra);
+    
+}
+
+.container_left_window .container_frame_prof .container_prof .list_prof{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: var(--cor-preenchimento);
+    width: 100%;
+    height: 95%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.container_left_window .container_frame_prof .container_prof .list_prof .card_prof{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, var(--cor-principal), var(--cor-secundaria))  ;
+    width: 100%;
+    margin: 2%;
+    height: 11%;
+    text-shadow: 1px 1px 20px var(--cor-sombra);
+    transition: 0.2s;
+}
+
+.container_left_window .container_frame_prof .container_prof .list_prof .card_prof:hover{
+    transform: translateY(-0.2vh);
+    box-shadow: 1px 2px 1px var(--cor-sombra);
+}
+
+.container_left_window .container_frame_prof .container_prof .list_prof .card_prof .card_topic{
+    display: flex;
+    font-size: 15px;
+    color: var(--cor-letra-branco);
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 0.5%;
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container_left_window .container_frame_prof .container_prof .list_prof .card_prof .card_topic2{
+    display: flex;
+    color: var(--cor-letra-branco);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5%;
+    width: 30%;
+    height: 100%
+}
+
+.container_left_window .container_frame_prof .container_prof .list_prof .card_prof .card_topic2 select{
+
+    width: 90%;
+    height: 50%;
+    border-radius: 25px;
+    margin-bottom: 1%;
+}
+
+.container_left_window .container_frame_prof .container_btn_prof{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-preenchimento);
+    width: 98%;
+    height: 10%;
+    border: 5px solid var(--cor-principal);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 4px 5px 1px var(--cor-sombra);
+}
+
+.container_left_window .container_frame_prof .container_btn_prof .btn_prof{
+    background-color: var(--cor-preenchimento);
+    width: 50%;
+    margin: 0.5%;
+    height: 90%;
+    border-radius: 10px;
+    border: 1px solid var(--cor-secundaria);
+    transition: 0.1s;
+}
+
+.container_left_window .container_frame_prof .container_btn_prof .btn_prof:hover{
+    transform: translateY(-0.3vh);
+    cursor:pointer;
+    box-shadow: 2px 3px 1px var(--cor-sombra);
+}
+
+.container_left_window .container_frame_prof .container_btn_prof .btn_prof:active{
+    background-color: var(--cor-sombra);
+    transform: translateY(-0.0vh);
+    box-shadow: 0px 0px 0px var(--cor-sombra)
+}

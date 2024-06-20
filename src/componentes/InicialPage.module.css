@@ -1,0 +1,24 @@
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .containerButtun{
+  height: 50%;
+  width: 90%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: 100px;
+  align-items: baseline;
+}
+
+
+.link{
+  text-decoration: none;
+}
