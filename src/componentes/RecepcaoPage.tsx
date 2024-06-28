@@ -42,6 +42,7 @@ export function RecepcaoPage() {
         '/api/',
         chamada,
       )
+      console.log("aqui")
       setChamadaCont(chamadaCont + 1)
       return response.data.id
     } catch (error) {
@@ -64,7 +65,7 @@ export function RecepcaoPage() {
     
     fetchChamadas()
 
-    const intervalId = setInterval(fetchChamadas, 10000) // Intervalo de 5 segundos
+    const intervalId = setInterval(fetchChamadas, 20000) // Intervalo de 5 segundos
 
     return () => clearInterval(intervalId)
   }, [chamadaCont])

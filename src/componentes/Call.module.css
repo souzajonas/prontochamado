@@ -17,6 +17,11 @@
 
 }
 
+.col_header{
+  font-size: 85px;
+  font-weight: 700;
+}
+
  .container_call table thead{
     display: table-header-group;
     background-color: var(--cor-secundaria);

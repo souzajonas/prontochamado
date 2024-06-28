@@ -66,7 +66,7 @@ export function SalaPage({ sala, nome }: SalaPagePropos) {
 
     fetchChamadas()
 
-    const intervalId = setInterval(fetchChamadas, 10000)
+    const intervalId = setInterval(fetchChamadas, 20000)
 
     return () => clearInterval(intervalId)
   }, [pacienteAtual])

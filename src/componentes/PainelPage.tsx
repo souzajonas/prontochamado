@@ -7,6 +7,7 @@ import { Footer } from './Footer'
 import styles from './Painel.module.css'
 import { Chamada } from '../../utils/connect'
 import axios from 'axios'
+
 export function PainelPage() {
   // máximo 4
   const [listaCall, setListaCall] = useState<Chamada[]>([])
@@ -58,14 +59,14 @@ export function PainelPage() {
 
   useEffect(() => {
     fetchChamadas()
-    const intervalId = setInterval(fetchChamadas, 9000) // Intervalo de 5 segundos
+    const intervalId = setInterval(fetchChamadas, 15000) // Intervalo de 5 segundos
 
     return () => clearInterval(intervalId)
   }, [])
 
   useEffect(() => {
     fetchChamadaAtual()
-    const intervalId = setInterval(fetchChamadaAtual, 8000) // Intervalo de 5 segundos
+    const intervalId = setInterval(fetchChamadaAtual, 14000) // Intervalo de 5 segundos
 
     return () => clearInterval(intervalId)
   }, [ultimo])

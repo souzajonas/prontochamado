@@ -1,28 +1,38 @@
-import { dbConnect } from '../../../utils/connect';
+import { sql } from '@vercel/postgres';
+import { NextResponse } from 'next/server';
 
 export async function GET(req: Request, res: Response) {
 
-  const db = await dbConnect
-
-  const items = await db.all(`SELECT * FROM chamadas WHERE date(data) = date('now') ORDER BY id DESC`);
-
-  return new Response(JSON.stringify(items), {
+    try {
+    const result =
+      await sql`SELECT * FROM chamadas
+                 WHERE data::date = CURRENT_DATE
+                ORDER BY id DESC;`; 
+   return new Response(JSON.stringify(result.rows), {
     headers: { "Content-Type": "application/json" },
     status: 200,
-  });
-}
+  }); 
+  } catch (error) {
+    return NextResponse.json({ error }, { status: 500 });
+  }
+  
+ }
+
+ 
+
+
 
 export async function POST(req: Request) {
-  console.log("AQUI")
-
-  const db = await dbConnect;
   const { paciente, atendimento, sala, prioritario, data, identificacao, status } = await req.json();
   
+ try {
+    const result =
+      await sql`INSERT INTO chamadas (paciente, atendimento, sala, prioritario, data, identificacao, status) VALUES (${paciente}, ${atendimento}, ${sala}, ${prioritario}, ${data}, ${identificacao}, ${status});`;
+   return NextResponse.json({ result }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({ error }, { status: 500 });
+  }
 
-  await db.run(
-    'INSERT INTO chamadas (paciente, atendimento, sala, prioritario, data, identificacao, status) VALUES (?, ?, ?, ?, ?, ?, ?)',
-    [paciente, atendimento, sala, prioritario, data, identificacao, status]
-  );
-
-  return new Response(null, { status: 201 });
+  
 }
+

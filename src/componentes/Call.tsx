@@ -3,14 +3,15 @@
 import { useEffect, useState } from 'react'
 import styles from './Call.module.css'
 import { Chamada } from '../../utils/connect'
+import { unstable_noStore as noStore } from 'next/cache';
 
 interface CallProps {
   ultimo?: Chamada
 }
 
 export function Call({ ultimo }: CallProps) {
+  noStore()
   const [isBlinking, setBlinking] = useState(false)
-
   const [ultimoChamado, setChamado] = useState<Chamada>()
 
   useEffect(() => {
@@ -43,8 +44,8 @@ export function Call({ ultimo }: CallProps) {
             console.log(error)
           }
           msg.voice = voices[0]
-          speech.speak(msg)
-          speech.speak(msg)
+            speech.speak(msg)
+            speech.speak(msg)
         }
       }
 
@@ -74,7 +75,7 @@ export function Call({ ultimo }: CallProps) {
         <tbody>
           <tr>
             <td
-              className={`${styles.col_nomes} ${isBlinking ? 'blinking' : ''}`}
+              className={`${styles.col_header} ${isBlinking ? 'blinking' : ''}`}
             >
               {ultimoChamado?.paciente}
             </td>  
