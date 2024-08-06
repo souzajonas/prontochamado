@@ -32,9 +32,9 @@ export function InicialPage() {
 
         <Link
           className={styles.link}
-          href={{ pathname: '/sala', query: { sala: 2, nome: 'Médico Sala 2' } }}
+          href={{ pathname: '/sala', query: { sala: 2, nome: 'Farmácia Sala 2' } }}
         >
-          <ButtouInicial texto="Médico" sala="2" />
+          <ButtouInicial texto="Farmácia" sala="2" />
         </Link>
 
         <Link
@@ -63,6 +63,13 @@ export function InicialPage() {
           href={{ pathname: '/sala', query: { sala: 6, nome: 'Vacinas Sala 6' } }}
         >
           <ButtouInicial texto="Vacinas" sala="6" />
+        </Link>
+
+        <Link
+          className={styles.link}
+          href={{ pathname: '/sala', query: { sala: 7, nome: 'Psicóloga Sala 7' } }}
+        >
+          <ButtouInicial texto="Psicóloga" sala="7" />
         </Link>
       </div>
       <Footer />

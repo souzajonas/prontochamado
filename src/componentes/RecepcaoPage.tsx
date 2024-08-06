@@ -23,6 +23,8 @@ export function RecepcaoPage() {
 
   async function criarChamada(dados: FormValues) {
     console.log(dados)
+    const dataAtual = new Date();
+
     const chamada: Chamada = {
       atendimento: dados.consultorio.split(' ').shift()!,
       paciente: dados.paciente.toUpperCase(),
@@ -32,9 +34,11 @@ export function RecepcaoPage() {
         dados.consultorio.charAt(dados.consultorio.length - 1),
         10,
       ),
-      data: new Date().toISOString(),
+      data: new Date(dataAtual.getTime() - (dataAtual.getTimezoneOffset() * 60000)).toISOString(),
       identificacao: dados.consultorio,
     }
+
+    console.log(chamada.data)
 
     // POST NA ROTA PARA CRIAR
     try {
@@ -97,11 +101,12 @@ export function RecepcaoPage() {
             />
             <select className={styles.consultorio} {...register('consultorio')}>
               <option value="Médico Sala 1">Médico Sala 1</option>
-              <option value="Médico Sala 2">Médico Sala 2</option>
+              <option value="Farmácia Sala 2">Farmácia Sala 2</option>
               <option value="Odontológico Sala 3">Odontológico Sala 3</option>
               <option value="Enfermagem Sala 4">Enfermagem Sala 4</option>
               <option value="Acolhimento Sala 5">Acolhimento Sala 5</option>
               <option value="Vacinas Sala 6">Vacinas Sala 6</option>
+              <option value="Psicóloga Sala 7">Psicóloga Sala 7</option>
             </select>
             <div className={styles.prioritario}>
               <h1 className={styles.prioritarioTexto}>Prioritário</h1>
