@@ -20,43 +20,43 @@ export function Call({ ultimo }: CallProps) {
       setBlinking(true)
 
       // Função para verificar se as vozes estão carregadas
-      const startSpeechSynthesis = () => {
-        const speech = window.speechSynthesis
-        const voices = speech.getVoices()
+      // const startSpeechSynthesis = () => {
+      //   const speech = window.speechSynthesis
+      //   const voices = speech.getVoices()
 
-        if (voices.length > 0) {
-          const msg = new SpeechSynthesisUtterance()
+      //   if (voices.length > 0) {
+      //     const msg = new SpeechSynthesisUtterance()
 
-          msg.rate = 0.8
-          msg.pitch = 0
-          msg.lang = 'pt-BR'
-          msg.text = `Chamando ${ultimo.paciente}, atendimento ${ultimo.atendimento}, Sala ${ultimo.sala}`
+      //     msg.rate = 0.8
+      //     msg.pitch = 0
+      //     msg.lang = 'pt-BR'
+      //     msg.text = `Chamando ${ultimo.paciente}, atendimento ${ultimo.atendimento}, Sala ${ultimo.sala}`
 
-          msg.onstart = () => {
-            console.log('Síntese Iniciada.')
-          }
+      //     msg.onstart = () => {
+      //       console.log('Síntese Iniciada.')
+      //     }
 
-          msg.onend = () => {
-            console.log('Síntese Concluída.')
-          }
+      //     msg.onend = () => {
+      //       console.log('Síntese Concluída.')
+      //     }
 
-          msg.onerror = (error) => {
-            console.log(error)
-          }
-          msg.voice = voices[0]
-            speech.speak(msg)
-            speech.speak(msg)
-        }
-      }
+      //     msg.onerror = (error) => {
+      //       console.log(error)
+      //     }
+      //     msg.voice = voices[0]
+      //       speech.speak(msg)
+      //       speech.speak(msg)
+      //   }
+      // }
 
-      window.speechSynthesis.onvoiceschanged = startSpeechSynthesis
+      //window.speechSynthesis.onvoiceschanged = startSpeechSynthesis
 
-      startSpeechSynthesis()
+      //startSpeechSynthesis()
       const timeout = setTimeout(() => {
         setBlinking(false)
       }, 5000)
       return () => {
-        window.speechSynthesis.onvoiceschanged = null
+        //window.speechSynthesis.onvoiceschanged = null
         clearTimeout(timeout)
       }
     }
