@@ -24,6 +24,7 @@ export function SalaPage({ sala, nome }: SalaPagePropos) {
     if (pacienteAtual !== null && typeof pacienteAtual === 'object') {
       paciente = pacienteAtual
       paciente.status = 'atendido'
+      paciente.horaChamado = null
 
       try {
         await axios.put(`/api/chamadas/${paciente.id!}`, paciente)
@@ -66,7 +67,7 @@ export function SalaPage({ sala, nome }: SalaPagePropos) {
 
     fetchChamadas()
 
-    const intervalId = setInterval(fetchChamadas, 20000)
+    const intervalId = setInterval(fetchChamadas, 25000)
 
     return () => clearInterval(intervalId)
   }, [pacienteAtual])

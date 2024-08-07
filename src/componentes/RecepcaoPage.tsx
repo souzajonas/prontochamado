@@ -69,7 +69,7 @@ export function RecepcaoPage() {
     
     fetchChamadas()
 
-    const intervalId = setInterval(fetchChamadas, 20000) // Intervalo de 5 segundos
+    const intervalId = setInterval(fetchChamadas, 120000) // Intervalo de 5 segundos
 
     return () => clearInterval(intervalId)
   }, [chamadaCont])

@@ -59,14 +59,14 @@ export function PainelPage() {
 
   useEffect(() => {
     fetchChamadas()
-    const intervalId = setInterval(fetchChamadas, 15000) // Intervalo de 5 segundos
+    const intervalId = setInterval(fetchChamadas, 25000) // Intervalo de 5 segundos
 
     return () => clearInterval(intervalId)
   }, [])
 
   useEffect(() => {
     fetchChamadaAtual()
-    const intervalId = setInterval(fetchChamadaAtual, 14000) // Intervalo de 5 segundos
+    const intervalId = setInterval(fetchChamadaAtual, 24000) // Intervalo de 5 segundos
 
     return () => clearInterval(intervalId)
   }, [ultimo])
