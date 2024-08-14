@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import styles from './Call.module.css'
 import { Chamada } from '../../utils/connect'
 import { unstable_noStore as noStore } from 'next/cache';
+import axios from 'axios';
 
 interface CallProps {
   ultimo?: Chamada
@@ -13,52 +14,37 @@ export function Call({ ultimo }: CallProps) {
   noStore()
   const [isBlinking, setBlinking] = useState(false)
   const [ultimoChamado, setChamado] = useState<Chamada>()
+  const [audio] = useState(new Audio())
+  
 
   useEffect(() => {
     if (ultimo && ultimo.paciente) {
       setChamado(ultimo)
       setBlinking(true)
 
-      // Função para verificar se as vozes estão carregadas
-      // const startSpeechSynthesis = () => {
-      //   const speech = window.speechSynthesis
-      //   const voices = speech.getVoices()
+      const buscarAudio = async () => {
+        var count = 0
+        try {
+          const response = await axios.post('/api/chamadas/audio', { texto: `Chamando ${ultimo.paciente}, atendimento ${ultimo.atendimento}, Sala ${ultimo.sala}` }, { responseType: 'blob' })
 
-      //   if (voices.length > 0) {
-      //     const msg = new SpeechSynthesisUtterance()
+          const audioUrl = URL.createObjectURL(response.data)
+          audio.src = audioUrl
+          audio.play()
+          count = 1
 
-      //     msg.rate = 0.8
-      //     msg.pitch = 0
-      //     msg.lang = 'pt-BR'
-      //     msg.text = `Chamando ${ultimo.paciente}, atendimento ${ultimo.atendimento}, Sala ${ultimo.sala}`
-
-      //     msg.onstart = () => {
-      //       console.log('Síntese Iniciada.')
-      //     }
-
-      //     msg.onend = () => {
-      //       console.log('Síntese Concluída.')
-      //     }
-
-      //     msg.onerror = (error) => {
-      //       console.log(error)
-      //     }
-      //     msg.voice = voices[0]
-      //       speech.speak(msg)
-      //       speech.speak(msg)
-      //   }
-      // }
-
-      //window.speechSynthesis.onvoiceschanged = startSpeechSynthesis
-
-      //startSpeechSynthesis()
-      const timeout = setTimeout(() => {
-        setBlinking(false)
-      }, 5000)
-      return () => {
-        //window.speechSynthesis.onvoiceschanged = null
-        clearTimeout(timeout)
+          audio.onended = () => {
+            if (count === 1) {
+              count = 2
+              audio.play()
+            }
+          }
+        } catch (error) {
+          console.error('Erro ao buscar o áudio:', error)
+        }
       }
+
+      buscarAudio()
+
     }
   }, [ultimo])
   /**  */
