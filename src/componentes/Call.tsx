@@ -42,9 +42,7 @@ export function Call({ ultimo }: CallProps) {
           console.error('Erro ao buscar o áudio:', error)
         }
       }
-
       buscarAudio()
-
     }
   }, [ultimo])
   /**  */
