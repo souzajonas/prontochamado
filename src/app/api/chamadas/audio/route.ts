@@ -4,7 +4,7 @@ import axios from 'axios';
 export async function POST(request: Request) {
   noStore();
   const { texto } = await request.json();
-  const apiKey = 'AIzaSyB-Z-CGgl1JLrMslYjKN3ZFnR3N_zTiGqc'
+  const apiKey = process.env.GOOGLE_API_KEY
   const endpoint = `https://texttospeech.googleapis.com/v1beta1/text:synthesize?key=${apiKey}`
   const payload = {
     "audioConfig": {
