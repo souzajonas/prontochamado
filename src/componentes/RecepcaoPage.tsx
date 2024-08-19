@@ -22,7 +22,6 @@ export function RecepcaoPage() {
   const [chamadaCont, setChamadaCont] = useState(0)
 
   async function criarChamada(dados: FormValues) {
-    console.log(dados)
     const dataAtual = new Date();
 
     const chamada: Chamada = {
@@ -37,8 +36,6 @@ export function RecepcaoPage() {
       data: new Date(dataAtual.getTime() - (dataAtual.getTimezoneOffset() * 60000)).toISOString(),
       identificacao: dados.consultorio,
     }
-
-    console.log(chamada.data)
 
     // POST NA ROTA PARA CRIAR
     try {
