@@ -21,18 +21,18 @@ export async function POST(request: Request) {
     }
   }
 
-  const response = await axios.post(endpoint, payload);
-    const audioContent = response.data.audioContent; // O áudio vem em base64
+  //const response = await axios.post(endpoint, payload);
+    //const audioContent = response.data.audioContent; // O áudio vem em base64
 
     // Converte o base64 para binário e retorna como resposta
-    const audioBuffer = Buffer.from(audioContent, 'base64');
+    //const audioBuffer = Buffer.from(audioContent, 'base64');
     
-    return new Response(audioBuffer, {
-      headers: {
-        'Content-Type': 'audio/mpeg',
-        'Content-Disposition': 'attachment; filename="output.mp3"',
-      },
-      status: 200,
-    });
+    // return new Response(audioBuffer, {
+    //   headers: {
+    //     'Content-Type': 'audio/mpeg',
+    //     'Content-Disposition': 'attachment; filename="output.mp3"',
+    //   },
+    //   status: 200,
+    // });
 
 }
