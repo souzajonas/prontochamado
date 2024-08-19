@@ -43,7 +43,6 @@ export function RecepcaoPage() {
         '/api/',
         chamada,
       )
-      console.log("aqui")
       setChamadaCont(chamadaCont + 1)
       return response.data.id
     } catch (error) {

@@ -25,6 +25,60 @@
   padding-top: 10px;
 }
 
+.acao{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+
+.formulario{
+  width: 34%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.consultorio{
+  width: 80%;
+  height: 25px;
+  font-size: 20px;
+}
+
+.prioritario{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.prioritarioTexto{
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.prioritarioInput{
+  height: 30px;
+  border-radius: 50%
+}
+
+.botao{
+  background-color: var(--cor-principal);
+  height: 30px;
+  width: 350px;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 20px;
+  border-bottom: 4px solid var(--cor-secundaria);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .botaoChamar{
   background-color: var(--cor-principal);
   height: 150px;
@@ -45,6 +99,11 @@
 }
 
 .botaoChamar:hover{
+  opacity: 95%;
+  cursor: pointer;
+}
+
+.botao:hover{
   opacity: 95%;
   cursor: pointer;
 }
