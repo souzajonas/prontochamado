@@ -77,10 +77,12 @@ export function RecepcaoPage() {
     formState: { errors },
   } = useForm<FormValues>()
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    criarChamada(data)
-    reset({
-      paciente: '',
-    })
+    if (data.paciente !== null){
+      criarChamada(data)
+      reset({
+        paciente: '',
+      })
+    }
   }
 
   return (

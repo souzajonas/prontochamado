@@ -7,6 +7,8 @@ import { Footer } from './Footer'
 import styles from './Painel.module.css'
 import { Chamada } from '../../utils/connect'
 import axios from 'axios'
+import { HeaderPainel } from './HeaderPainel'
+import { FooterPainel } from './FooterPainel'
 
 export function PainelPage() {
   // máximo 4
@@ -74,7 +76,7 @@ export function PainelPage() {
   return (
     <div className={styles.App}>
       <div className={styles.container_up}>
-        <Header />
+        <HeaderPainel />
       </div>
 
       <div className={styles.container_center}>
@@ -85,7 +87,7 @@ export function PainelPage() {
       </div>
 
       <div className={styles.container_down}>
-        <Footer />
+        <FooterPainel />
       </div>
     </div>
   )

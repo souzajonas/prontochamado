@@ -21,7 +21,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--cor-secundaria);
-    height: 20%;
+    height: 15%;
     width: 100%;
     border-top-right-radius: 5vh;
     border-bottom: 3px solid var(--cor-principal);
@@ -30,7 +30,7 @@
  .container_list .list_title{
     font-weight: bold;
     color: var(--cor-letra-branco);
-    font-size: 5vh;
+    font-size: 25px;
 }
   
 
@@ -50,10 +50,10 @@
     display: table-header-group;
     background-color: var(--cor-principal);
     text-align: center;
-    height: 6vh;
+    height: 5vh;
     width: 100%;
     font-weight: lighter;
-    font-size: 4vh;
+    font-size: 20px;
     color: var(--cor-letra-branco); 
     border-bottom: 1px solid var(--cor-letra-branco);
 }
@@ -67,7 +67,7 @@
     display: table-cell;
     padding: 10px;
     text-align: center;
-    font-size: 4vh;
+    font-size: 20px;
     color: var(--cor-letra-branco);
     animation: show_new 1s ease-in-out
 }

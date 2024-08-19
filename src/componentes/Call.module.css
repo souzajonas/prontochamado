@@ -18,7 +18,7 @@
 }
 
 .col_header{
-  font-size: 60px;
+  font-size: 46px;
   font-weight: 700;
 }
 
@@ -33,7 +33,7 @@
 }
 
  .container_call table thead th{
-    box-shadow: 0px 15px 30px var(--cor-sombra);
+    box-shadow: 0px 5px 30px var(--cor-sombra);
 }
 
 
