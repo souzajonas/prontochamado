@@ -6,13 +6,12 @@
     flex-wrap: nowrap;
 
     background-color: var(--cor-principal);
-    height: 53%;
+    height: 60%;
     width: 100%;
     border-top-right-radius: 5vh;
     border-bottom-right-radius: 5vh;
     border-top: 3px solid var(--cor-principal);
     box-shadow: 10px 20px 30px var(--cor-sombra);
-
 }
 
  .container_list .list_title{
