@@ -66,7 +66,6 @@
  .container_list table td{
     display: table-cell;
     padding: 10px;
-    padding-left: 30px;
     text-align: center;
     font-size: 4vh;
     color: var(--cor-letra-branco);
@@ -77,6 +76,7 @@
  .container_list .col_nomes{
     width: 36%;
     text-align: start;
+    padding-left: 15px;
 }
 
  .container_list .col_nomes_h{
